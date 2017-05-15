@@ -7,7 +7,7 @@ write-host "============================================`n"
 write-host "  Merchant e-Solutions Security Patch Tool`n"
 write-host "============================================`n"
 
-if ((get-hotfix -Id "KB4012606" -ErrorAction SilentlyContinue) -or (get-hotfix -Id "KB4013198" -ErrorAction SilentlyContinue) -or (get-hotfix -Id "KB4012606" -ErrorAction SilentlyContinue) ){
+if ((get-hotfix -Id "KB4012606" -ErrorAction SilentlyContinue) -or (get-hotfix -Id "KB4013198" -ErrorAction SilentlyContinue) -or (get-hotfix -Id "KB4013429" -ErrorAction SilentlyContinue) ){
 $patched = 0
 }
     
