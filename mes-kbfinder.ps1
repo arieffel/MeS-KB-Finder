@@ -26,6 +26,7 @@ $patched = 0
     
 if (($patched -eq 0) -or ($WindowsVersion = 1703)){
     write-host "Your machine is patched.  No further action is needed`n`n`n" -ForegroundColor Green
+    timeout 5 | out-null
 }
 else {
     write-host ("YOUR MACHINE IS NOT PATCHED!`n") -ForegroundColor Red
@@ -34,5 +35,9 @@ else {
     write-host "User Name: $username"
     write-host "Windows Version: $WindowsVersion`n`n"
     write-host "DO NOT ATTEMPT TO CONNECT TO CORPORATE VPN UNTIL YOUR MACHINE HAS BEEN SUCCESSFULLY REMEDIATED!`n`n"
+    timeout 20 | out-null
+    cmd /c pause
 }
-cmd /c pause
+
+write-host "This window will automatically close in 5 seconds
+timeout 5 | out-null
