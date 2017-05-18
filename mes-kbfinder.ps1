@@ -1,7 +1,14 @@
 cls
 $username = $env:USERNAME
 $computername = $env:COMPUTERNAME
-$WindowsVersion = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId).ReleaseId
+$versioncheck = @()
+$versioncheck = (gwmi win32_operatingsystem).version
+if ($versioncheck[0] -eq "6"){
+    $windowsversion = "Windows 7 `n" + (gwmi win32_operatingsystem).version
+}
+else {
+    $WindowsVersion = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId).ReleaseId
+}
 $patched = 1
 $hotfixes = @("KB4012212", "KB4012213", "KB4012214", "KB4012215", "KB4012216", "KB4012217", "KB4012598", "KB4013429", "KB4015217", "KB4015438", "KB4015549", "KB4015550", "KB4015551", "KB4015552", "KB4015553", "KB4016635", "KB4019215", "KB4019216", "KB4019264", "KB4019472")
 
@@ -28,5 +35,3 @@ else {
     write-host "Windows Version: $WindowsVersion`n`n"
     write-host "DO NOT ATTEMPT TO CONNECT TO CORPORATE VPN UNTIL YOUR MACHINE HAS BEEN SUCCESSFULLY REMEDIATED!`n`n"
 }
-
-pause
