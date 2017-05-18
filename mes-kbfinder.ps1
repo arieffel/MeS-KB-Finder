@@ -35,3 +35,4 @@ else {
     write-host "Windows Version: $WindowsVersion`n`n"
     write-host "DO NOT ATTEMPT TO CONNECT TO CORPORATE VPN UNTIL YOUR MACHINE HAS BEEN SUCCESSFULLY REMEDIATED!`n`n"
 }
+cmd /c pause
