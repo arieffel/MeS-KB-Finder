@@ -39,5 +39,5 @@ else {
     cmd /c pause
 }
 
-#write-host "This window will automatically close in 5 seconds"
-#timeout 5 | out-null
+write-host "This window will automatically close in 5 seconds"
+timeout 5 | out-null
