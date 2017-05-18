@@ -40,4 +40,4 @@ else {
 }
 
 #write-host "This window will automatically close in 5 seconds"
-timeout 5 | out-null
+#timeout 5 | out-null
