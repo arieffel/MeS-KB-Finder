@@ -24,7 +24,7 @@ if (Get-HotFix | Where-Object {$hotfixes -contains $_.HotfixID}) {
 $patched = 0
 }
     
-if (($patched -eq 0) -or ($WindowsVersion = 1703)){
+if (($patched -eq 0) -or ($WindowsVersion -eq 1703)){
     write-host "Your machine is patched.  No further action is needed`n`n`n" -ForegroundColor Green
     timeout 5 | out-null
 }
